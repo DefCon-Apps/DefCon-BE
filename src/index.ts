@@ -13,6 +13,10 @@ app.get("/", (req: Request, res: Response) => {
     res.send("Hello, World!");
 });
 
+app.post("/getMainEvent", (req: Request, res: Response) => {
+    res.send("Get Main Page Event");
+});
+
 app.listen(8080, () => {
     console.log("Server is Listening on Port 8080!");
 });
