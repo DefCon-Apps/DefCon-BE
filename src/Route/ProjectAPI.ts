@@ -5,3 +5,5 @@ const projectRouter = express.Router();
 projectRouter.post("/", async (req: Request, res: Response) => {
     res.send("Project API");
 });
+
+export default projectRouter;
