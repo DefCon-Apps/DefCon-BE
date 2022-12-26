@@ -5,3 +5,5 @@ const commonRouter = express.Router();
 commonRouter.get("/", (req: Request, res: Response) => {
     res.send("Common API");
 });
+
+export default commonRouter;
