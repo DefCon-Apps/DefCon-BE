@@ -78,14 +78,19 @@ const getFirebaseDBList = async (collectionID: string) => {
             cntData++;
             console.log(curDoc.id);
             if(isMemberList){
-                // listMember.push({
-                //     POST_AUTHOR: curDoc.get("POST_AUTHOR"),
-                //     POST_DATE: curDoc.get("POST_DATE"),
-                //     POST_ID: curDoc.id,
-                //     POST_IMAGE: curDoc.get("POST_IMAGE"),
-                //     POST_RECOMMEND: curDoc.get("POST_RECOMMEND"),
-                //     POST_TITLE: curDoc.get("POST_TITLE")
-                // });
+                listMember.push({
+                    blog: curDoc.get("blog"),
+                    boj: curDoc.get("boj"),
+                    facebook: curDoc.get("facebook"),
+                    github: curDoc.get("github"),
+                    instagram: curDoc.get("instagram"),
+                    twitter: curDoc.get("twitter"),
+                    comment: curDoc.get("comment"),
+                    company: curDoc.get("company"),
+                    name: curDoc.get("name"),
+                    profileImage: curDoc.get("profile_img"),
+                    history: curDoc.get("history"),
+                });
             }else{
                 listProject.push({
                     title: curDoc.get("title"),
