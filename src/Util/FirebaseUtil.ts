@@ -1,7 +1,7 @@
 import {FirebaseApp, FirebaseOptions, initializeApp} from "firebase/app";
 import {collection, doc, Firestore, getDoc, getDocs, getFirestore} from "firebase/firestore";
 
-import {API_DATA} from "./DataClass";
+import {API_DATA, MemberData, MemberList, ProjectData, ProjectList} from "./DataClass";
 
 import dotenv from "dotenv";
 
@@ -23,6 +23,22 @@ export const initFirebase = () => {
 
 export const getMainEvent = async () => {
     return await getFirebaseDB("Common", "MainEvent");
+};
+
+export const getPMemberData = async () => {
+    return "Get Member Data Function";
+};
+
+export const getMemberList = async () => {
+    return "Get Member List Function";
+};
+
+export const getProjectData = async () => {
+    return "Get Project Data Function";
+};
+
+export const getProjectList = async () => {
+    return "Get Project List Function";
 };
 
 const getFirebaseDB = async (collectionID: string, documentID: string) => {
@@ -58,6 +74,8 @@ const getFirebaseDBList = async (collectionID: string) => {
         RESULT_DATA: {}
     }
 
+    const isMemberList = (collectionID == "Members");
+
     const fbDocument = await getDocs(collection(firebaseDB, collectionID));
     if(fbDocument.empty){
         RESULT_DATA.RESULT_CODE = 100;
@@ -65,33 +83,57 @@ const getFirebaseDBList = async (collectionID: string) => {
         return RESULT_DATA;
     }
 
-    const POST_IS_NOTICE = (collectionID == "notice");
-
     try{
-        let POST_COUNT = 0;
-        let POST_LIST: Array<any> = [];
+        let RESULT_DATA_LIST: MemberList | ProjectList;
+
+        let cntData = 0;
+        let listMember: Array<MemberData> = [];
+        let listProject: Array<ProjectData> = [];
 
         fbDocument.forEach((curDoc) => {
-            POST_COUNT++;
-            POST_LIST.push({
-                POST_AUTHOR: curDoc.get("POST_AUTHOR"),
-                POST_DATE: curDoc.get("POST_DATE"),
-                POST_ID: curDoc.id,
-                POST_IMAGE: curDoc.get("POST_IMAGE"),
-                POST_RECOMMEND: curDoc.get("POST_RECOMMEND"),
-                POST_TITLE: curDoc.get("POST_TITLE")
-            })
-        })
+            cntData++;
+            console.log(curDoc.id);
+            if(isMemberList){
+                listMember.push({
+                    blog: curDoc.get("blog"),
+                    boj: curDoc.get("boj"),
+                    facebook: curDoc.get("facebook"),
+                    github: curDoc.get("github"),
+                    instagram: curDoc.get("instagram"),
+                    twitter: curDoc.get("twitter"),
+                    comment: curDoc.get("comment"),
+                    company: curDoc.get("company"),
+                    name: curDoc.get("name"),
+                    profileImage: curDoc.get("profile_img"),
+                    history: curDoc.get("history"),
+                });
+            }else{
+                listProject.push({
+                    title: curDoc.get("title"),
+                    content: curDoc.get("content"),
+                    date: curDoc.get("date"),
+                    image: curDoc.get("image"),
+                    tech: curDoc.get("tech"),
+                    user: curDoc.get("user")
+                });
+            }
+        });
 
-        POST_LIST.reverse();
+        if(isMemberList){
+            RESULT_DATA_LIST = {
+                count: cntData,
+                data: listMember
+            }
+        }else{
+            RESULT_DATA_LIST = {
+                count: cntData,
+                data: listProject
+            }
+        }
 
         RESULT_DATA.RESULT_CODE = 200;
         RESULT_DATA.RESULT_MSG = "Success";
-        RESULT_DATA.RESULT_DATA = {
-            POST_COUNT: POST_COUNT,
-            POST_IS_NOTICE: POST_IS_NOTICE,
-            POST_LIST: POST_LIST
-        }
+        RESULT_DATA.RESULT_DATA = RESULT_DATA_LIST;
     }catch(error){
         RESULT_DATA.RESULT_CODE = 100;
         RESULT_DATA.RESULT_MSG = error as string;
