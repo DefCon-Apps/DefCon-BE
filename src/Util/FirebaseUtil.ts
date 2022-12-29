@@ -30,7 +30,7 @@ export const getMemberData = async (memberID: string) => {
 };
 
 export const getMemberList = async () => {
-    return "Get Member List Function";
+    return await getFirebaseDBList("Members");
 };
 
 export const getProjectData = async (projectID: string) => {
