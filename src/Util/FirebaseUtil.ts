@@ -1,7 +1,7 @@
 import {FirebaseApp, FirebaseOptions, initializeApp} from "firebase/app";
 import {collection, doc, Firestore, getDoc, getDocs, getFirestore} from "firebase/firestore";
 
-import {API_DATA} from "./DataClass";
+import {API_DATA, MemberData, MemberList, ProjectData, ProjectList} from "./DataClass";
 
 import dotenv from "dotenv";
 
@@ -58,6 +58,8 @@ const getFirebaseDBList = async (collectionID: string) => {
         RESULT_DATA: {}
     }
 
+    const isMemberList = (collectionID == "Members");
+
     const fbDocument = await getDocs(collection(firebaseDB, collectionID));
     if(fbDocument.empty){
         RESULT_DATA.RESULT_CODE = 100;
@@ -65,33 +67,45 @@ const getFirebaseDBList = async (collectionID: string) => {
         return RESULT_DATA;
     }
 
-    const POST_IS_NOTICE = (collectionID == "notice");
-
     try{
-        let POST_COUNT = 0;
-        let POST_LIST: Array<any> = [];
+        let RESULT_DATA_LIST: MemberList | ProjectList;
+
+        let cntData = 0;
+        let listMember: Array<MemberData> = [];
+        let listProject: Array<ProjectData> = [];
 
         fbDocument.forEach((curDoc) => {
-            POST_COUNT++;
-            POST_LIST.push({
-                POST_AUTHOR: curDoc.get("POST_AUTHOR"),
-                POST_DATE: curDoc.get("POST_DATE"),
-                POST_ID: curDoc.id,
-                POST_IMAGE: curDoc.get("POST_IMAGE"),
-                POST_RECOMMEND: curDoc.get("POST_RECOMMEND"),
-                POST_TITLE: curDoc.get("POST_TITLE")
-            })
-        })
+            cntData++;
+            console.log(curDoc.id);
+            if(isMemberList){
+                // listMember.push({
+                //     POST_AUTHOR: curDoc.get("POST_AUTHOR"),
+                //     POST_DATE: curDoc.get("POST_DATE"),
+                //     POST_ID: curDoc.id,
+                //     POST_IMAGE: curDoc.get("POST_IMAGE"),
+                //     POST_RECOMMEND: curDoc.get("POST_RECOMMEND"),
+                //     POST_TITLE: curDoc.get("POST_TITLE")
+                // })
+            }else{
 
-        POST_LIST.reverse();
+            }
+        });
+
+        if(isMemberList){
+            RESULT_DATA_LIST = {
+                count: cntData,
+                data: listMember
+            }
+        }else{
+            RESULT_DATA_LIST = {
+                count: cntData,
+                data: listProject
+            }
+        }
 
         RESULT_DATA.RESULT_CODE = 200;
         RESULT_DATA.RESULT_MSG = "Success";
-        RESULT_DATA.RESULT_DATA = {
-            POST_COUNT: POST_COUNT,
-            POST_IS_NOTICE: POST_IS_NOTICE,
-            POST_LIST: POST_LIST
-        }
+        RESULT_DATA.RESULT_DATA = RESULT_DATA_LIST;
     }catch(error){
         RESULT_DATA.RESULT_CODE = 100;
         RESULT_DATA.RESULT_MSG = error as string;
