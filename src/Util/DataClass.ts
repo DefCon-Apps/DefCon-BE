@@ -19,7 +19,8 @@ interface MemberData{
 }
 
 interface MemberHistoryData{
-
+    date: String,
+    content: String
 }
 
 interface MemberList{
