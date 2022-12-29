@@ -45,5 +45,6 @@ interface ProjectMemberData{
 }
 
 interface ProjectList{
-
+    count: Number,
+    data: Array<ProjectData>
 }
