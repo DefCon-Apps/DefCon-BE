@@ -37,7 +37,3 @@ interface ProjectData{
 interface ProjectList{
 
 }
-
-interface ProjectListItem{
-
-}
