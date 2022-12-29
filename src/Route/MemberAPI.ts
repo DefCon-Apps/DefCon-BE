@@ -14,7 +14,7 @@ memberRouter.post("/getList", async (req: Request, res: Response) => {
     res.send(API_RESULT_DATA);
 });
 
-memberRouter.post("/getMemberData", (req: Request, res: Response) => {
+memberRouter.post("/getData", (req: Request, res: Response) => {
     res.send("Get Specific Member Data");
 });
 
