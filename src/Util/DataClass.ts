@@ -1,16 +1,16 @@
-interface API_DATA {
+export interface API_DATA {
     RESULT_CODE: number,
     RESULT_MSG: string,
     RESULT_DATA: object
 }
 
-interface MainEvent{
+export interface MainEvent{
     content: String,
     image: String,
     title: String
 }
 
-interface MemberData{
+export interface MemberData{
     blog: Object,
     boj: Object,
     facebook: Object,
@@ -26,17 +26,17 @@ interface MemberData{
     history: Array<MemberHistoryData>
 }
 
-interface MemberHistoryData{
+export interface MemberHistoryData{
     date: String,
     content: String
 }
 
-interface MemberList{
+export interface MemberList{
     count: Number,
     data: Array<MemberData>
 }
 
-interface ProjectData{
+export interface ProjectData{
     title: String,
     content: String,
     date: String,
@@ -45,12 +45,12 @@ interface ProjectData{
     user: Array<ProjectMemberData>
 }
 
-interface ProjectMemberData{
+export interface ProjectMemberData{
     user: String,
     role: String
 }
 
-interface ProjectList{
+export interface ProjectList{
     count: Number,
     data: Array<ProjectData>
 }
