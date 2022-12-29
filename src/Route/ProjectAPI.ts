@@ -10,8 +10,11 @@ projectRouter.post("/getList", async (req: Request, res: Response) => {
     res.send(API_RESULT_DATA);
 });
 
-projectRouter.post("/getData", (req: Request, res: Response) => {
-    res.send("Get Specific Project Data");
+projectRouter.post("/getData", async (req: Request, res: Response) => {
+    const PROJECT_ID: string = req.body.PROJECT_ID;
+    const API_RESULT_DATA: API_DATA = await FirebaseUtil.getProjectData(PROJECT_ID);
+
+    res.send(API_RESULT_DATA);
 });
 
 export default projectRouter;
