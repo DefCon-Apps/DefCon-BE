@@ -85,9 +85,16 @@ const getFirebaseDBList = async (collectionID: string) => {
                 //     POST_IMAGE: curDoc.get("POST_IMAGE"),
                 //     POST_RECOMMEND: curDoc.get("POST_RECOMMEND"),
                 //     POST_TITLE: curDoc.get("POST_TITLE")
-                // })
+                // });
             }else{
-
+                // listProject.push({
+                //     POST_AUTHOR: curDoc.get("POST_AUTHOR"),
+                //     POST_DATE: curDoc.get("POST_DATE"),
+                //     POST_ID: curDoc.id,
+                //     POST_IMAGE: curDoc.get("POST_IMAGE"),
+                //     POST_RECOMMEND: curDoc.get("POST_RECOMMEND"),
+                //     POST_TITLE: curDoc.get("POST_TITLE")
+                // });
             }
         });
 
