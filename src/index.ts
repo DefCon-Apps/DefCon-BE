@@ -10,6 +10,9 @@ const app = express();
 
 FirebaseUtil.initFirebase();
 
+app.use(express.json());
+app.use(express.urlencoded());
+
 app.use("/member", memberRouter);
 app.use("/project", projectRouter);
 app.use("/common", commonRouter);
