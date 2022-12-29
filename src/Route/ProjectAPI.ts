@@ -6,7 +6,7 @@ projectRouter.post("/getList", (req: Request, res: Response) => {
     res.send("Get Project List");
 });
 
-projectRouter.post("/getProjectData", (req: Request, res: Response) => {
+projectRouter.post("/getData", (req: Request, res: Response) => {
     res.send("Get Specific Project Data");
 });
 
