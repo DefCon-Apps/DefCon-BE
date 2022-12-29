@@ -1,7 +1,7 @@
-import { FirebaseApp, FirebaseOptions, initializeApp } from "firebase/app";
-import { collection, doc, Firestore, getDoc, getDocs, getFirestore } from "firebase/firestore";
+import {FirebaseApp, FirebaseOptions, initializeApp} from "firebase/app";
+import {collection, doc, Firestore, getDoc, getDocs, getFirestore} from "firebase/firestore";
 
-import { API_DATA } from "./DataClass";
+import {API_DATA} from "./DataClass";
 
 import dotenv from "dotenv";
 
@@ -19,6 +19,10 @@ let firebaseDB: Firestore;
 export const initFirebase = () => {
     firebaseApp =  initializeApp(firebaseConfig);
     firebaseDB = getFirestore();
+};
+
+export const getMainEvent = async () => {
+    return await getFirebaseDB("Common", "MainEvent");
 };
 
 const getFirebaseDB = async (collectionID: string, documentID: string) => {
