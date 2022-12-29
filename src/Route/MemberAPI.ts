@@ -14,8 +14,11 @@ memberRouter.post("/getList", async (req: Request, res: Response) => {
     res.send(API_RESULT_DATA);
 });
 
-memberRouter.post("/getData", (req: Request, res: Response) => {
-    res.send("Get Specific Member Data");
+memberRouter.post("/getData", async (req: Request, res: Response) => {
+    const MEMBER_ID: string = req.body.MEMBER_ID;
+    const API_RESULT_DATA: API_DATA = await FirebaseUtil.getMemberData(MEMBER_ID);
+
+    res.send(API_RESULT_DATA);
 });
 
 export default memberRouter;
