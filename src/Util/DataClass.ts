@@ -1,5 +1,7 @@
 interface MainEvent{
-
+    content: String,
+    image: String,
+    title: String
 }
 
 interface MemberData{
