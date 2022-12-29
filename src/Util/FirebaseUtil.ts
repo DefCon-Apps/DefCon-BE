@@ -26,7 +26,7 @@ export const getMainEvent = async () => {
 };
 
 export const getMemberData = async (memberID: string) => {
-    return "Get Member Data Function";
+    return await getFirebaseDB("Members", memberID);
 };
 
 export const getMemberList = async () => {
