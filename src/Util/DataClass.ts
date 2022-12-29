@@ -26,11 +26,8 @@ interface MemberHistoryData{
 }
 
 interface MemberList{
-
-}
-
-interface MemberListItem{
-
+    count: Number,
+    data: Array<MemberData>
 }
 
 interface ProjectData{
