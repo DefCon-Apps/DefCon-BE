@@ -12,6 +12,8 @@ interface MemberData{
     instagram: Object,
     twitter: Object,
 
+    comment: String,
+    company: String,
     name: String,
     profileImage: String,
 
