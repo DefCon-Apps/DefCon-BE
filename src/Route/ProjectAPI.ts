@@ -1,18 +1,20 @@
 import express, { Request, Response } from "express";
-import memberRouter from "./MemberAPI";
+import {API_DATA} from "../Util/DataClass";
+import * as FirebaseUtil from "../Util/FirebaseUtil";
 
 const projectRouter = express.Router();
 
-projectRouter.get("/", (req: Request, res: Response) => {
-    res.send("Project API");
+projectRouter.post("/getList", async (req: Request, res: Response) => {
+    const API_RESULT_DATA: API_DATA = await FirebaseUtil.getProjectList();
+
+    res.send(API_RESULT_DATA);
 });
 
-memberRouter.post("/getList", (req: Request, res: Response) => {
-    res.send("Get Project List");
-});
+projectRouter.post("/getData", async (req: Request, res: Response) => {
+    const PROJECT_ID: string = req.body.PROJECT_ID;
+    const API_RESULT_DATA: API_DATA = await FirebaseUtil.getProjectData(PROJECT_ID);
 
-memberRouter.post("/getProjectData", (req: Request, res: Response) => {
-    res.send("Get Specific Project Data");
+    res.send(API_RESULT_DATA);
 });
 
 export default projectRouter;
