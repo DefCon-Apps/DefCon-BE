@@ -4,7 +4,11 @@ import commonRouter from "./Route/CommonAPI";
 import memberRouter from "./Route/MemberAPI";
 import projectRouter from "./Route/ProjectAPI";
 
+import * as FirebaseUtil from "./Util/FirebaseUtil";
+
 const app = express();
+
+FirebaseUtil.initFirebase();
 
 app.use("/member", memberRouter);
 app.use("/project", projectRouter);
