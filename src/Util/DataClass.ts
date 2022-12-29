@@ -31,7 +31,17 @@ interface MemberList{
 }
 
 interface ProjectData{
+    title: String,
+    content: String,
+    date: String,
+    image: Array<String>,
+    tech: Array<String>,
+    user: Array<ProjectMemberData>
+}
 
+interface ProjectMemberData{
+    user: String,
+    role: String
 }
 
 interface ProjectList{
