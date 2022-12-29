@@ -25,7 +25,7 @@ export const getMainEvent = async () => {
     return await getFirebaseDB("Common", "MainEvent");
 };
 
-export const getMemberData = async () => {
+export const getMemberData = async (memberID: string) => {
     return "Get Member Data Function";
 };
 
@@ -33,7 +33,7 @@ export const getMemberList = async () => {
     return "Get Member List Function";
 };
 
-export const getProjectData = async () => {
+export const getProjectData = async (projectID: string) => {
     return "Get Project Data Function";
 };
 
