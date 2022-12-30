@@ -194,3 +194,43 @@ Response Body
     }
 }
 ```
+
+### /project/getList
+
+Input Body : __None__
+
+Response Body
+```json
+{
+    "RESULT_CODE": 200,
+    "RESULT_MSG": "Success",
+    "RESULT_DATA": {
+        "count": 4,
+        "data": [
+            {
+                "title": PROJECT_TITLE,
+                "date": PROJECT_DATE,
+                "content": PROJECT_CONTENT,
+                "image": [
+                    IMAGE_BASE64,
+                    IMAGE_BASE64,
+                    ...
+                ],
+                "tech": [
+                    TECH_STACK,
+                    TECH_STACK,
+                    ...
+                ],
+                "user": [
+                    {
+                        "role": USER_ROLE,
+                        "user": USER_ID
+                    },
+                ...
+                ]
+            },
+            ...
+        ]
+    }
+}
+```
