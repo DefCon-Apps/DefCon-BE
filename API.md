@@ -155,3 +155,42 @@ Response Body
     }
 }
 ```
+
+### /project/getData
+
+Input Body
+```json
+{
+    "PROJECT_ID": PROJECT_ID
+}
+```
+
+Response Body
+```json
+{
+    "RESULT_CODE": 200,
+    "RESULT_MSG": "Success",
+    "RESULT_DATA": {
+        "title": PROJECT_TITLE,
+        "date": PROJECT_DATE,
+        "content": PROJECT_CONTENT,
+        "image": [
+            IMAGE_BASE64,
+            IMAGE_BASE64,
+            ...
+        ],
+        "tech": [
+            TECH_STACK,
+            TECH_STACK,
+            ...
+        ],
+        "user": [
+            {
+                "role": USER_ROLE,
+                "user": USER_ID
+            },
+            ...
+        ]
+    }
+}
+```
