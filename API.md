@@ -113,7 +113,7 @@ Response Body
     "RESULT_CODE": 200,
     "RESULT_MSG": "Success",
     "RESULT_DATA": {
-        "count": 4,
+        "count": DATA_COUNT(Number),
         "data": [
             {
                 "comment": COMMENT,
@@ -206,7 +206,7 @@ Response Body
     "RESULT_CODE": 200,
     "RESULT_MSG": "Success",
     "RESULT_DATA": {
-        "count": 4,
+        "count": DATA_COUNT(Number),
         "data": [
             {
                 "title": PROJECT_TITLE,
