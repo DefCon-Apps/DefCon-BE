@@ -48,3 +48,56 @@ Response Body
     }
 }
 ```
+
+### /member/getData
+
+Input Body
+```json
+{
+    "MEMBER_ID": MEMBER_ID
+}
+```
+
+Response Body
+```json
+{
+    "RESULT_CODE": 200,
+    "RESULT_MSG": "Success",
+    "RESULT_DATA": {
+        "comment": COMMENT,
+        "company": COMPANY,
+        "name": NAME,
+        "profile_img": IMAGE_BASE64,
+        "history": [
+            {
+                "content": HISTORY_CONTENT,
+                "date": HISTORY_DATE
+            }
+        ],
+        "blog": {
+            "isEnabled": true | false,
+            "url": BLOG_URL
+        },
+        "boj": {
+            "isEnabled": true | false,
+            "url": SOLVED_URL
+        },
+        "facebook": {
+            "isEnabled": true | false,
+            "url": FACEBOOK_URL
+        },
+        "github": {
+            "isEnabled": true | false,
+            "url": GITHUB_URL
+        },
+        "instagram": {
+            "isEnabled": true | false,
+            "url": INSTAGRAM_URL
+        },
+        "twitter": {
+            "isEnabled": true | false,
+            "url": TWITTER_URL
+        },
+    }
+}
+```
