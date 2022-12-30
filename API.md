@@ -16,6 +16,22 @@ https://api.defcon.or.kr
 | /project/getData     | Get Specific Project's Data     | ProjectID  | Project |
 | /project/getList     | Get Array of All Project's Data | N/A        | Project |
 
+---
+
+## Common Description
+
+### Result Values
+
+| Variable    | Type    | Description               |
+|-------------|---------|---------------------------|
+| RESULT_CODE | Integer | 200 is OK, Other is Error |
+| RESULT_MSG  | String  | Message for Result Check  |
+| RESULT_DATA | Object  | Values of API Function    |
+
+---
+
+## Detail Description
+
 ### /common/getMainEvent
 
 Input Body : __None__
