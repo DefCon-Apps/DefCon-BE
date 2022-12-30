@@ -1,4 +1,4 @@
-import express, {Request, Response} from "express";
+import express, { Request, Response } from "express";
 
 import commonRouter from "./Route/CommonAPI";
 import memberRouter from "./Route/MemberAPI";
