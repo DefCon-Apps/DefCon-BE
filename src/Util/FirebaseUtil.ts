@@ -1,7 +1,7 @@
-import {FirebaseApp, FirebaseOptions, initializeApp} from "firebase/app";
-import {collection, doc, Firestore, getDoc, getDocs, getFirestore} from "firebase/firestore";
+import { FirebaseApp, FirebaseOptions, initializeApp } from "firebase/app";
+import { collection, doc, Firestore, getDoc, getDocs, getFirestore } from "firebase/firestore";
 
-import {API_DATA, MemberData, MemberList, ProjectData, ProjectList} from "./DataClass";
+import { API_DATA, MemberData, MemberList, ProjectData, ProjectList } from "./DataClass";
 
 import dotenv from "dotenv";
 
@@ -92,7 +92,6 @@ const getFirebaseDBList = async (collectionID: string) => {
 
         fbDocument.forEach((curDoc) => {
             cntData++;
-            console.log(curDoc.id);
             if(isMemberList){
                 listMember.push({
                     blog: curDoc.get("blog"),

@@ -1,4 +1,4 @@
-import express, {Request, Response} from "express";
+import express, { Request, Response } from "express";
 
 import commonRouter from "./Route/CommonAPI";
 import memberRouter from "./Route/MemberAPI";
@@ -18,7 +18,7 @@ app.use("/project", projectRouter);
 app.use("/common", commonRouter);
 
 app.get("/", (req: Request, res: Response) => {
-    res.send("Hello, World!");
+    res.redirect("https://defcon.or.kr");
 });
 
 app.listen(8080, () => {
