@@ -97,7 +97,7 @@ Response Body
         "twitter": {
             "isEnabled": true | false,
             "url": TWITTER_URL
-        },
+        }
     }
 }
 ```
