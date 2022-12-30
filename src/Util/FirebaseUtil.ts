@@ -92,7 +92,6 @@ const getFirebaseDBList = async (collectionID: string) => {
 
         fbDocument.forEach((curDoc) => {
             cntData++;
-            console.log(curDoc.id);
             if(isMemberList){
                 listMember.push({
                     blog: curDoc.get("blog"),
