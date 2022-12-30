@@ -1,4 +1,4 @@
-export interface API_DATA {
+export interface API_DATA{
     RESULT_CODE: number,
     RESULT_MSG: string,
     RESULT_DATA: MainEvent | MemberData | MemberList | ProjectData | ProjectList | object
