@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
-import {API_DATA} from "../Util/DataClass";
+
+import { API_DATA } from "../Util/DataClass";
 import * as FirebaseUtil from "../Util/FirebaseUtil";
 
 const projectRouter = express.Router();
