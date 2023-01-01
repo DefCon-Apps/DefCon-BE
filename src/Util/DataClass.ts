@@ -56,6 +56,6 @@ export interface ProjectList{
 }
 
 export interface ProjectListItem{
-    id: Number,
+    id: String,
     data: ProjectData
 }
