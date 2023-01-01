@@ -108,7 +108,7 @@ const getFirebaseDBList = async (collectionID: string) => {
                 });
             }else{
                 listProject.push({
-                    id: 1234,
+                    id: curDoc.id,
                     data: {
                         title: curDoc.get("title"),
                         content: curDoc.get("content"),
