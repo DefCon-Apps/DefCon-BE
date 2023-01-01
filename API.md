@@ -208,28 +208,30 @@ Response Body
     "RESULT_DATA": {
         "count": DATA_COUNT(Number),
         "data": [
-            "id": PROJECT_ID,
-            "data": {
-                "title": PROJECT_TITLE,
-                "date": PROJECT_DATE,
-                "content": PROJECT_CONTENT,
-                "image": [
-                    IMAGE_BASE64,
-                    IMAGE_BASE64,
+            {
+                "id": PROJECT_ID,
+                "data": {
+                    "title": PROJECT_TITLE,
+                    "date": PROJECT_DATE,
+                    "content": PROJECT_CONTENT,
+                    "image": [
+                        IMAGE_BASE64,
+                        IMAGE_BASE64,
+                        ...
+                    ],
+                    "tech": [
+                        TECH_STACK,
+                        TECH_STACK,
+                        ...
+                    ],
+                    "user": [
+                        {
+                            "role": USER_ROLE,
+                            "user": USER_ID
+                        },
                     ...
-                ],
-                "tech": [
-                    TECH_STACK,
-                    TECH_STACK,
-                    ...
-                ],
-                "user": [
-                    {
-                        "role": USER_ROLE,
-                        "user": USER_ID
-                    },
-                ...
-                ]
+                    ]
+                }
             },
             ...
         ]
