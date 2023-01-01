@@ -1,7 +1,7 @@
 import { FirebaseApp, FirebaseOptions, initializeApp } from "firebase/app";
 import { collection, doc, Firestore, getDoc, getDocs, getFirestore } from "firebase/firestore";
 
-import {API_DATA, MemberData, MemberList, ProjectData, ProjectList, ProjectListItem} from "./DataClass";
+import {API_DATA, MemberData, MemberList, ProjectList, ProjectListItem} from "./DataClass";
 
 import dotenv from "dotenv";
 
