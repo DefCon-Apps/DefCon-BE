@@ -1,7 +1,7 @@
 import { FirebaseApp, FirebaseOptions, initializeApp } from "firebase/app";
 import { collection, doc, Firestore, getDoc, getDocs, getFirestore } from "firebase/firestore";
 
-import { API_DATA, MemberData, MemberList, ProjectData, ProjectList } from "./DataClass";
+import {API_DATA, MemberData, MemberList, ProjectList, ProjectListItem} from "./DataClass";
 
 import dotenv from "dotenv";
 
@@ -88,7 +88,7 @@ const getFirebaseDBList = async (collectionID: string) => {
 
         let cntData = 0;
         let listMember: Array<MemberData> = [];
-        let listProject: Array<ProjectData> = [];
+        let listProject: Array<ProjectListItem> = [];
 
         fbDocument.forEach((curDoc) => {
             cntData++;
@@ -108,12 +108,15 @@ const getFirebaseDBList = async (collectionID: string) => {
                 });
             }else{
                 listProject.push({
-                    title: curDoc.get("title"),
-                    content: curDoc.get("content"),
-                    date: curDoc.get("date"),
-                    image: curDoc.get("image"),
-                    tech: curDoc.get("tech"),
-                    user: curDoc.get("user")
+                    id: curDoc.id,
+                    data: {
+                        title: curDoc.get("title"),
+                        content: curDoc.get("content"),
+                        date: curDoc.get("date"),
+                        image: curDoc.get("image"),
+                        tech: curDoc.get("tech"),
+                        user: curDoc.get("user")
+                    }
                 });
             }
         });

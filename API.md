@@ -208,7 +208,8 @@ Response Body
     "RESULT_DATA": {
         "count": DATA_COUNT(Number),
         "data": [
-            {
+            "id": PROJECT_ID,
+            "data": {
                 "title": PROJECT_TITLE,
                 "date": PROJECT_DATE,
                 "content": PROJECT_CONTENT,

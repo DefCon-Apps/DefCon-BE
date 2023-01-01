@@ -52,5 +52,10 @@ export interface ProjectMemberData{
 
 export interface ProjectList{
     count: Number,
-    data: Array<ProjectData>
+    data: Array<ProjectListItem>
+}
+
+export interface ProjectListItem{
+    id: String,
+    data: ProjectData
 }
