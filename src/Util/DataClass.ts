@@ -54,3 +54,8 @@ export interface ProjectList{
     count: Number,
     data: Array<ProjectData>
 }
+
+export interface ProjectListItem{
+    id: Number,
+    data: ProjectData
+}
