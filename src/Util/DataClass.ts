@@ -40,6 +40,7 @@ export interface ProjectData{
     title: String,
     content: String,
     date: String,
+    description: String,
     image: Array<String>,
     tech: Array<String>,
     user: Array<ProjectMemberData>
