@@ -175,6 +175,7 @@ Response Body
         "title": PROJECT_TITLE,
         "date": PROJECT_DATE,
         "content": PROJECT_CONTENT,
+        "description" PROJECT_DESCRIPTION,
         "image": [
             IMAGE_BASE64,
             IMAGE_BASE64,
@@ -214,6 +215,7 @@ Response Body
                     "title": PROJECT_TITLE,
                     "date": PROJECT_DATE,
                     "content": PROJECT_CONTENT,
+                    "description" PROJECT_DESCRIPTION,
                     "image": [
                         IMAGE_BASE64,
                         IMAGE_BASE64,
