@@ -15,7 +15,6 @@ export interface MemberData{
     boj: Object,
     facebook: Object,
     github: Object,
-    id: String,
     instagram: Object,
     twitter: Object,
 
@@ -34,7 +33,12 @@ export interface MemberHistoryData{
 
 export interface MemberList{
     count: Number,
-    data: Array<MemberData>
+    data: Array<MemberListItem>
+}
+
+export interface MemberListItem{
+    id: String,
+    data: MemberData
 }
 
 export interface ProjectData{
