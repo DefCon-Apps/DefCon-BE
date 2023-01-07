@@ -4,10 +4,12 @@ import commonRouter from "./Route/CommonAPI";
 import memberRouter from "./Route/MemberAPI";
 import projectRouter from "./Route/ProjectAPI";
 
+import * as CorsUtil from "./Util/CorsUtil";
 import * as FirebaseUtil from "./Util/FirebaseUtil";
 
 const app = express();
 
+CorsUtil.setCors(app);
 FirebaseUtil.initFirebase();
 
 app.use(express.json());
