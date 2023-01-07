@@ -94,6 +94,7 @@ const getFirebaseDBList = async (collectionID: string) => {
             cntData++;
             if(isMemberList){
                 listMember.push({
+                    id: curDoc.id,
                     blog: curDoc.get("blog"),
                     boj: curDoc.get("boj"),
                     facebook: curDoc.get("facebook"),

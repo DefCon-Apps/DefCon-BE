@@ -15,6 +15,7 @@ export interface MemberData{
     boj: Object,
     facebook: Object,
     github: Object,
+    id: String,
     instagram: Object,
     twitter: Object,
 
