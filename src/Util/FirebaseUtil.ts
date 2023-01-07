@@ -1,7 +1,7 @@
 import { FirebaseApp, FirebaseOptions, initializeApp } from "firebase/app";
 import { collection, doc, Firestore, getDoc, getDocs, getFirestore } from "firebase/firestore";
 
-import {API_DATA, MemberData, MemberList, ProjectList, ProjectListItem} from "./DataClass";
+import {API_DATA, MemberList, MemberListItem, ProjectList, ProjectListItem} from "./DataClass";
 
 import dotenv from "dotenv";
 
@@ -87,24 +87,27 @@ const getFirebaseDBList = async (collectionID: string) => {
         let RESULT_DATA_LIST: MemberList | ProjectList;
 
         let cntData = 0;
-        let listMember: Array<MemberData> = [];
+        let listMember: Array<MemberListItem> = [];
         let listProject: Array<ProjectListItem> = [];
 
         fbDocument.forEach((curDoc) => {
             cntData++;
             if(isMemberList){
                 listMember.push({
-                    blog: curDoc.get("blog"),
-                    boj: curDoc.get("boj"),
-                    facebook: curDoc.get("facebook"),
-                    github: curDoc.get("github"),
-                    instagram: curDoc.get("instagram"),
-                    twitter: curDoc.get("twitter"),
-                    comment: curDoc.get("comment"),
-                    company: curDoc.get("company"),
-                    name: curDoc.get("name"),
-                    profileImage: curDoc.get("profile_img"),
-                    history: curDoc.get("history"),
+                    id: curDoc.id,
+                    data: {
+                        blog: curDoc.get("blog"),
+                        boj: curDoc.get("boj"),
+                        facebook: curDoc.get("facebook"),
+                        github: curDoc.get("github"),
+                        instagram: curDoc.get("instagram"),
+                        twitter: curDoc.get("twitter"),
+                        comment: curDoc.get("comment"),
+                        company: curDoc.get("company"),
+                        name: curDoc.get("name"),
+                        profileImage: curDoc.get("profile_img"),
+                        history: curDoc.get("history")
+                    }
                 });
             }else{
                 listProject.push({
