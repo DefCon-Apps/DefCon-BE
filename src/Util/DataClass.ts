@@ -20,6 +20,7 @@ export interface MemberData{
 
     comment: String,
     company: String,
+    companyImage: String,
     name: String,
     profileImage: String,
 
