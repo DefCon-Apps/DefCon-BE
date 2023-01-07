@@ -120,6 +120,7 @@ Response Body
                 "data": {
                     "comment": COMMENT,
                     "company": COMPANY,
+                    "companyImage": COMPABY_IMAGE_BASE64,
                     "name": NAME,
                     "profile_img": IMAGE_BASE64,
                     "history": [

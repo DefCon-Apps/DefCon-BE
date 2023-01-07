@@ -104,6 +104,7 @@ const getFirebaseDBList = async (collectionID: string) => {
                         twitter: curDoc.get("twitter"),
                         comment: curDoc.get("comment"),
                         company: curDoc.get("company"),
+                        companyImage: curDoc.get("company_img"),
                         name: curDoc.get("name"),
                         profileImage: curDoc.get("profile_img"),
                         history: curDoc.get("history")
