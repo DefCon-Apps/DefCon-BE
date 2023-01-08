@@ -179,6 +179,7 @@ Response Body
     "RESULT_DATA": {
         "title": PROJECT_TITLE,
         "date": PROJECT_DATE,
+        "category": PROJECT_CATEGORY,
         "content": PROJECT_CONTENT,
         "description" PROJECT_DESCRIPTION,
         "image": [
@@ -219,6 +220,7 @@ Response Body
                 "data": {
                     "title": PROJECT_TITLE,
                     "date": PROJECT_DATE,
+                    "category": PROJECT_CATEGORY,
                     "content": PROJECT_CONTENT,
                     "description" PROJECT_DESCRIPTION,
                     "image": [

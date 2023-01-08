@@ -44,6 +44,7 @@ export interface MemberListItem{
 
 export interface ProjectData{
     title: String,
+    category: "android" | "web" | "repair" | String,
     content: String,
     date: String,
     description: String,

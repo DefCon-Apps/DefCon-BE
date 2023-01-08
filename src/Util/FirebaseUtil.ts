@@ -115,6 +115,7 @@ const getFirebaseDBList = async (collectionID: string) => {
                     id: curDoc.id,
                     data: {
                         title: curDoc.get("title"),
+                        category: curDoc.get("category"),
                         content: curDoc.get("content"),
                         date: curDoc.get("date"),
                         description: curDoc.get("description"),
